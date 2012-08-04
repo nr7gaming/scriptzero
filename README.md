@@ -1,4 +1,0 @@
-scriptzero
-==========
-
-nr7gaming
