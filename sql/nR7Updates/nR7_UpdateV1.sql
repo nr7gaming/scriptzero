@@ -179,3 +179,6 @@ UPDATE script_texts SET content_default='You there! Check out that noise.' WHERE
 UPDATE script_texts SET content_default='We\'re under attack!  A vast, ye swabs! Repel the invaders!' WHERE entry=-1036001;
 -- Quest: Ausschalten des Götzen
 UPDATE creature_template SET ScriptName='npc_belnistrasz' WHERE entry=8516;
+-- Quest: GESUCHT: Gurgelbacke!
+DELETE FROM scripted_areatrigger WHERE entry=1966;
+INSERT INTO scripted_areatrigger VALUES (1966,'at_murkdeep');

@@ -46,7 +46,77 @@ InstanceData* GetInstanceData_world_map_eastern_kingdoms(Map* pMap)
  */
 struct MANGOS_DLL_DECL world_map_kalimdor : public ScriptedMap
 {
-    world_map_kalimdor(Map* pMap) : ScriptedMap(pMap) {}
+    world_map_kalimdor(Map* pMap) : ScriptedMap(pMap) { Initialize(); }
+
+    uint8 m_uiMurkdeepAdds_KilledAddCount;
+
+    void Initialize()
+    {
+        m_uiMurkdeepAdds_KilledAddCount = 0;
+    }
+
+    void OnCreatureCreate(Creature* pCreature)
+    {
+        if (pCreature->GetEntry() == NPC_MURKDEEP)
+            m_mNpcEntryGuidStore[NPC_MURKDEEP] = pCreature->GetObjectGuid();
+    }
+
+    void OnCreatureDeath(Creature* pCreature)
+    {
+        switch (pCreature->GetEntry())
+        {
+            case NPC_GREYMIST_COASTRUNNNER:
+                if (pCreature->IsTemporarySummon())             // Only count the ones summoned for Murkdeep quest
+                {
+                    ++m_uiMurkdeepAdds_KilledAddCount;
+
+                    // If all 3 coastrunners are killed, summon 2 warriors
+                    if (m_uiMurkdeepAdds_KilledAddCount == 3)
+                    {
+                        float fX, fY, fZ;
+                        for (uint8 i = 0; i < 2; ++i)
+                        {
+                            pCreature->GetRandomPoint(aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][0], aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][1], aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][2], 5.0f, fX, fY, fZ);
+
+                            if (Creature* pTemp = pCreature->SummonCreature(NPC_GREYMIST_WARRIOR, fX, fY, fZ, aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][3], TEMPSUMMON_DEAD_DESPAWN, 0))
+                            {
+                                pTemp->SetWalk(false);
+                                pTemp->GetRandomPoint(aSpawnLocations[POS_IDX_MURKDEEP_MOVE][0], aSpawnLocations[POS_IDX_MURKDEEP_MOVE][1], aSpawnLocations[POS_IDX_MURKDEEP_MOVE][2], 5.0f, fX, fY, fZ);
+                                pTemp->GetMotionMaster()->MovePoint(0, fX, fY, fZ);
+                            }
+                        }
+
+                        m_uiMurkdeepAdds_KilledAddCount = 0;
+                    }
+                }
+                break;
+            case NPC_GREYMIST_WARRIOR:
+                if (pCreature->IsTemporarySummon())             // Only count the ones summoned for Murkdeep quest
+                {
+                    ++m_uiMurkdeepAdds_KilledAddCount;
+
+                    // After the 2 warriors are killed, Murkdeep spawns, along with a hunter
+                    if (m_uiMurkdeepAdds_KilledAddCount == 2)
+                    {
+                        float fX, fY, fZ;
+                        for (uint8 i = 0; i < 2; ++i)
+                        {
+                            pCreature->GetRandomPoint(aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][0], aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][1], aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][2], 5.0f, fX, fY, fZ);
+
+                            if (Creature* pTemp = pCreature->SummonCreature(!i ? NPC_MURKDEEP : NPC_GREYMIST_HUNTER, fX, fY, fZ, aSpawnLocations[POS_IDX_MURKDEEP_SPAWN][3], TEMPSUMMON_DEAD_DESPAWN, 0))
+                            {
+                                pTemp->SetWalk(false);
+                                pTemp->GetRandomPoint(aSpawnLocations[POS_IDX_MURKDEEP_MOVE][0], aSpawnLocations[POS_IDX_MURKDEEP_MOVE][1], aSpawnLocations[POS_IDX_MURKDEEP_MOVE][2], 5.0f, fX, fY, fZ);
+                                pTemp->GetMotionMaster()->MovePoint(0, fX, fY, fZ);
+                            }
+                        }
+
+                        m_uiMurkdeepAdds_KilledAddCount = 0;
+                    }
+                }
+                break;
+        }
+    }
 
     void SetData(uint32 uiType, uint32 uiData) {}
 };
