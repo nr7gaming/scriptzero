@@ -1,4 +1,4 @@
---
+ï»¿--
 -- Version data (part used in command .server info )
 --
 
@@ -346,7 +346,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1000359,'Thank you for helping me. I know my way back from here.',0,0,0,0,'KAYA_END'),
 
 (-1000360,'The strands of LIFE have been severed! The Dreamers must be avenged!',0,1,0,0,' ysondre SAY_AGGRO'),
-(-1000361,'Come forth, ye Dreamers – and claim your vengeance!',0,1,0,0,' ysondre SAY_SUMMONDRUIDS'),
+(-1000361,'Come forth, ye Dreamers â€“ and claim your vengeance!',0,1,0,0,' ysondre SAY_SUMMONDRUIDS'),
 
 (-1000362,'Let\'s go $N. I am ready to reach Whitereach Post.',0,0,1,0,'paoka SAY_START'),
 (-1000363,'Now this looks familiar. If we keep heading east, I think we can... Ahh, Wyvern on the attack!',0,0,1,0,'paoka SAY_WYVERN'),
@@ -802,7 +802,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1000770,'Ancient ones guide my hand... Wake from your slumber! WAKE AND SEAL THIS CURSED PLACE!',0,0,0,0, 'SAY_FANDRAL_SEAL_6'),
 (-1000771,'%s falls to one knee - exhausted.',0,2,0,0,'EMOTE_FANDRAL_EXHAUSTED'),
 (-1000772,'It... It is over, Lord Staghelm. We are victorious. Albeit the cost for this victory was great.',0,0,0,1,'SAY_ANACHRONOS_EPILOGUE_1'),
-(-1000773,'There is but one duty that remains…',0,0,0,1,'SAY_ANACHRONOS_EPILOGUE_2'),
+(-1000773,'There is but one duty that remainsâ€¦',0,0,0,1,'SAY_ANACHRONOS_EPILOGUE_2'),
 (-1000774,'Before I leave this place, I make one final offering for you, Lord Staghelm. Should a time arise in which you must gain entry to this accursed fortress, use the scepter of the shifting sands on the sacred gong. The magic holding the barrier together will dissipate an the horrors of the Ahn\'Qiraj will be unleashed upon the world once more.',0,0,0,1,'SAY_ANACHRONOS_EPILOGUE_3'),
 (-1000775,'%s hands the Scepter of the Shifting Sands to $N.',0,2,0,0,'EMOTE_ANACHRONOS_SCEPTER'),
 (-1000776,'After the savagery that my people have witnessed and felt, you expect me to accept another burden, dragon? Surely you are mad.',0,0,0,1,'SAY_FANDRAL_EPILOGUE_4'),
@@ -812,7 +812,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1000780,'My son\'s soul will find no comfort in this hollow victory, dragon! I will have him back. Though it takes a millenia. I WILL have my son back!',0,0,0,1,'SAY_FANDRAL_EPILOGUE_7'),
 (-1000781,'%s shakes his head in disappointment.',0,2,0,25,'EMOTE_ANACHRONOS_DISPPOINTED'),
 (-1000782,'%s kneels down to pickup the fragments of the shattered scepter.',0,2,0,0,'EMOTE_ANACHRONOS_PICKUP'),
-(-1000783,'And now you know all that there is to know, mortal…',0,0,0,0,'SAY_ANACHRONOS_EPILOGUE_8');
+(-1000783,'And now you know all that there is to know, mortalâ€¦',0,0,0,0,'SAY_ANACHRONOS_EPILOGUE_8');
 
 (-1000784,'This blue light... It\'s strange. What do you think it means?',0,0,0,0,'Ranshalla SAY_ENTER_OWL_THICKET'),
 (-1000785,'We\'ve found it!',0,0,0,0,'Ranshalla SAY_REACH_TORCH_1'),
