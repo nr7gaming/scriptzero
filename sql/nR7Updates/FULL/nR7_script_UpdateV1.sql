@@ -812,8 +812,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1000780,'My son\'s soul will find no comfort in this hollow victory, dragon! I will have him back. Though it takes a millenia. I WILL have my son back!',0,0,0,1,'SAY_FANDRAL_EPILOGUE_7'),
 (-1000781,'%s shakes his head in disappointment.',0,2,0,25,'EMOTE_ANACHRONOS_DISPPOINTED'),
 (-1000782,'%s kneels down to pickup the fragments of the shattered scepter.',0,2,0,0,'EMOTE_ANACHRONOS_PICKUP'),
-(-1000783,'And now you know all that there is to know, mortal…',0,0,0,0,'SAY_ANACHRONOS_EPILOGUE_8');
-
+(-1000783,'And now you know all that there is to know, mortal…',0,0,0,0,'SAY_ANACHRONOS_EPILOGUE_8'),
 (-1000784,'This blue light... It\'s strange. What do you think it means?',0,0,0,0,'Ranshalla SAY_ENTER_OWL_THICKET'),
 (-1000785,'We\'ve found it!',0,0,0,0,'Ranshalla SAY_REACH_TORCH_1'),
 (-1000786,'Please, light this while I am channeling',0,0,0,0,'Ranshalla SAY_REACH_TORCH_2'),

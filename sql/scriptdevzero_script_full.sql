@@ -846,7 +846,7 @@ INSERT INTO script_texts (entry,content_default,sound,type,language,emote,commen
 (-1000813,'Thank you for you help, $n. I wish you well in your adventures.',0,0,0,0,'Ranshalla SAY_QUEST_END_1'),
 (-1000814,'I want to stay here and reflect on what we have seen. Please see Erelas and tell him what we have learned.',0,0,0,0,'Ranshalla SAY_QUEST_END_2'),
 (-1000815,'%s begins chanting a strange spell...',0,2,0,0,'Ranshalla EMOTE_CHANT_SPELL'),
-(-1000816,'Remember, I need your help to properly channel. I will ask you to aid me several times in our path, so please be ready.',0,0,0,0,'Ranshalla SAY_QUEST_START');
+(-1000816,'Remember, I need your help to properly channel. I will ask you to aid me several times in our path, so please be ready.',0,0,0,0,'Ranshalla SAY_QUEST_START'),
 
 -- -1 033 000 SHADOWFANG KEEP
 INSERT INTO script_texts (entry,content_default,sound,type,language,emote,comment) VALUES
