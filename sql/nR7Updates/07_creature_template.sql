@@ -1,0 +1,1 @@
+﻿UPDATE creature_template SET minhealth=1200, maxhealth=1600 WHERE entry=4484;
